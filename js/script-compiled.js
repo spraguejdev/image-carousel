@@ -66,6 +66,27 @@ function changeIndicator(id) {
   getElement.indicators[id].classList.add("active");
 }
 
+function autoPlay() {
+  if (prop.autoSlide) {
+    autoPlayInterval = setInterval(function() {
+      changeSlide(1);
+    }, prop.slideTime);
+  }
+}
+
+function stopAutoPlay() {
+  document
+    .getElementById("carousel")
+    .addEventListener("mouseenter", function() {
+      clearInterval(autoPlayInterval);
+    });
+  document
+    .getElementById("carousel")
+    .addEventListener("mouseleave", function() {
+      autoPlay();
+    });
+}
+
 function clickIndicator() {
   getElement.indicators.forEach(function(indicator) {
     indicator.addEventListener("click", function(e) {
