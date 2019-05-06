@@ -180,6 +180,41 @@ body {
   overflow: hidden;
   position: relative;
 }
+.slider-btn {
+  display: block;
+  font-size: 5rem;
+  position: absolute;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  top: 0;
+  padding: 0 2rem;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.slider-btn--next {
+  right: 0;
+}
+
+.slider-btn--prev {
+  left: 0;
+}
+
+.slider-btn .fa {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  color: rgba(0, 0, 0, 0.2);
+}
+.slider-btn:hover .fa {
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
 
 .slides-wrapper {
   width: 100%;
@@ -201,6 +236,51 @@ body {
 .slide-img {
   display: block;
   width: 100%;
+}
+
+.indicators {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.indicators-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 2rem;
+}
+.indicators-item {
+  display: block;
+  width: 3rem;
+  height: 0.7rem;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.indicators-item:hover {
+  -webkit-box-shadow: 0 0 2px #000000;
+  box-shadow: 0 0 2px #000000;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+.indicators-item.active {
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 2px #000000;
+  box-shadow: 0 0 2px #000000;
+}
+.indicators-item:not(:last-child) {
+  margin-right: 1rem;
 }
 
 @-webkit-keyframes fade {
