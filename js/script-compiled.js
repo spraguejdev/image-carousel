@@ -61,6 +61,23 @@ function changeSlide(num) {
   changeIndicator(currentSlide);
 }
 
+function changeIndicator(id) {
+  reset("indicators", "active");
+  getElement.indicators[id].classList.add("active");
+}
+
+function clickIndicator() {
+  getElement.indicators.forEach(function(indicator) {
+    indicator.addEventListener("click", function(e) {
+      reset("indicators", "active");
+      e.target.classList.add("active");
+      var currIndicator = e.target.dataset.slideTo * 1;
+      prop.id = currIndicator;
+      addClass(currIndicator);
+    });
+  });
+}
+
 init(prop.id);
 
 getElement.nextBtn.addEventListener("click", function() {
